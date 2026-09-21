@@ -32,11 +32,13 @@ python3 praktik/validasi_klasifikasi_nilai.py
 | 80    | -5    | 90        | -           | Pesan penolakan rentang nilai tugas                              | Pesan penolakan rentang nilai tugas                            | Sesuai  |
 | 80    | 80    | abc       | -           | Pesan penolakan tipe                                             | Pesan penolakan tipe                                   | Sesuai  |
 ## Refleksi
-Masalah
+1. Masalah
 Program awal hanya memeriksa apakah input bisa dikonversi ke angka (float). Akibatnya, masukan dengan simbol tambahan seperti "80%" langsung ditolak dengan pesan umum "seluruh data harus berupa angka", tanpa menjelaskan kesalahan format.
-Perbaikan
+2. Perbaikan
+```bash
 if not teks_hadir.replace(".", "").isdigit():
     print("Masukan ditolak: kehadiran harus berupa angka tanpa simbol.")
 else:
     hadir = float(teks_hadir)
-Dengan begitu, input "80%" ditolak dengan pesan khusus, sedangkan "80" atau "80.5" tetap diterima.
+
+3. Dengan begitu, input "80%" ditolak dengan pesan khusus, sedangkan "80" atau "80.5" tetap diterima.
